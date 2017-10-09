@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html,body
+        {
+            width: 100%;
+            height: 3000px;
+        }
+        #cover
+        {
+            width: 100%;
+            height: 100%;
+            background: pink;
+
+            /*opcity是c3属性只能兼容火狐 谷歌以及ie9+ 范围:0-1*/
+            opacity: 0.4;
+
+            /*ie6 7 8  范围0-100*/
+            filter: alpha(opacity:40);
+
+            position: absolute;
+            left: 0;
+            top: 0;
+
+            display: none;
+        }
+
+        #loginPanel
+        {
+            width: 400px;
+            height: 400px;
+            background: deepskyblue;
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            margin-left: -200px;
+            margin-top: -200px;
+            /*transform: translate;*/
+
+            display: none;
+        }
+
+    </style>
+
+</head>
+<body>
+<button id="login">登录</button>
+<div id="cover"></div>
+<div id="loginPanel"></div>
+
+<script>
+    var login=document.getElementById("login");
+    var cover=document.getElementById("cover");
+    var loginPanel=document.getElementById("loginPanel");
+
+    login.onclick=function(event){
+        var myEvent=event||window.event;
+
+        myEvent.cancelBubble= true;
+        cover.style.display="block";
+        loginPanel.style.display="block";
+        document.body.style.overflow="hidden"
+    }
+    document.onclick=function(event){
+        var myEvent=event||window.event;
+        var target=myEvent.target?myEvent.target:myEvent.srcElement;
+        if(target.id != "loginPanel"){
+            cover.style.display="none";
+            loginPanel.style.display="none";
+            document.body.style.overflow="auto";
+        }
+
+    }
+</script>
+</body>
+</html>
