@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            background: #000;
+        }
+
+        #container {
+            position: absolute;
+            width: 390px;
+            height: 440px;
+            border: 20px solid #fff;
+            top: 0px;
+            left: 0px;
+            right: 0px;
+            bottom: 0;
+            margin: auto;
+            overflow: hidden;
+            background-color: #000;
+        }
+
+        .glass {
+            position: absolute;
+            top: -31px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .wrap-glass {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: #000;
+        }
+
+        .particle {
+            position: absolute;
+            background: #9a9a9a;
+            border-radius: 50%;
+        }
+
+        .particle:nth-child(1) {
+            top: 39px;
+            left: 285px;
+            height: 2px;
+            width: 3px;
+            opacity: 0.86;
+            animation-delay: 0.14s;
+        }
+
+        .particle:nth-child(2) {
+            top: 117px;
+            left: 196px;
+            height: 3px;
+            width: 2px;
+            opacity: 0.58;
+            animation-delay: 0.12s;
+        }
+
+        .particle:nth-child(3) {
+            top: 150px;
+            left: 197px;
+            height: 4px;
+            width: 3px;
+            opacity: 0.38;
+            animation-delay: 0.66s;
+        }
+
+        .particle:nth-child(4) {
+            top: 70px;
+            left: 113px;
+            height: 2px;
+            width: 4px;
+            opacity: 0.33;
+            animation-delay: 0.2s;
+        }
+
+        .particle:nth-child(5) {
+            top: 31px;
+            left: 245px;
+            height: 3px;
+            width: 2px;
+            opacity: 0.73;
+            animation-delay: 0.63s;
+        }
+
+        .particle:nth-child(6) {
+            top: 80px;
+            left: 299px;
+            height: 3px;
+            width: 4px;
+            opacity: 0.41;
+            animation-delay: 0.68s;
+        }
+
+        .particle:nth-child(7) {
+            top: 131px;
+            left: 280px;
+            height: 2px;
+            width: 2px;
+            opacity: 0.26;
+            animation-delay: 0.96s;
+        }
+
+        .particle:nth-child(8) {
+            top: 49px;
+            left: 298px;
+            height: 2px;
+            width: 4px;
+            opacity: 0.25;
+            animation-delay: 0.8s;
+        }
+
+        .particle:nth-child(9) {
+            top: 31px;
+            left: 228px;
+            height: 4px;
+            width: 3px;
+            opacity: 0.03;
+            animation-delay: 0.69s;
+        }
+
+        .particle:nth-child(10) {
+            top: 143px;
+            left: 214px;
+            height: 2px;
+            width: 2px;
+            opacity: 0.56;
+            animation-delay: 0.28s;
+        }
+
+        .particle:nth-child(11) {
+            top: 116px;
+            left: 295px;
+            height: 2px;
+            width: 2px;
+            opacity: 0.22;
+            animation-delay: 0.03s;
+        }
+
+        .particle:nth-child(12) {
+            top: 71px;
+            left: 216px;
+            height: 4px;
+            width: 4px;
+            opacity: 0.4;
+            animation-delay: 0.66s;
+        }
+
+        .particle:nth-child(13) {
+            top: 91px;
+            left: 193px;
+            height: 2px;
+            width: 4px;
+            opacity: 0.67;
+            animation-delay: 0.03s;
+        }
+
+        .particle:nth-child(14) {
+            top: 148px;
+            left: 139px;
+            height: 4px;
+            width: 4px;
+            opacity: 0.47;
+            animation-delay: 0.18s;
+        }
+
+        .particle:nth-child(15) {
+            top: 148px;
+            left: 250px;
+            height: 4px;
+            width: 2px;
+            opacity: 0.59;
+            animation-delay: 0.05s;
+        }
+
+        .particle:nth-child(16) {
+            top: 26px;
+            left: 114px;
+            height: 4px;
+            width: 3px;
+            opacity: 0.62;
+            animation-delay: 0.77s;
+        }
+
+        .particle:nth-child(17) {
+            top: 46px;
+            left: 118px;
+            height: 3px;
+            width: 3px;
+            opacity: 0.4;
+            animation-delay: 0.22s;
+        }
+
+        .particle:nth-child(18) {
+            top: 106px;
+            left: 175px;
+            height: 2px;
+            width: 2px;
+            opacity: 0.03;
+            animation-delay: 0.45s;
+        }
+
+        .particle:nth-child(19) {
+            top: 133px;
+            left: 233px;
+            height: 4px;
+            width: 4px;
+            opacity: 0.05;
+            animation-delay: 0.56s;
+        }
+
+        .particle:nth-child(20) {
+            top: 138px;
+            left: 292px;
+            height: 2px;
+            width: 2px;
+            opacity: 0.2;
+            animation-delay: 0.8s;
+        }
+
+        .particle:nth-child(21) {
+            top: 80px;
+            left: 240px;
+            height: 4px;
+            width: 3px;
+            opacity: 0.42;
+            animation-delay: 0.04s;
+        }
+
+        .particle:nth-child(22) {
+            top: 57px;
+            left: 231px;
+            height: 4px;
+            width: 3px;
+            opacity: 0.82;
+            animation-delay: 0.2s;
+        }
+
+        .particle:nth-child(23) {
+            top: 143px;
+            left: 279px;
+            height: 2px;
+            width: 4px;
+            opacity: 0.09;
+            animation-delay: 0.3s;
+        }
+
+        .particle:nth-child(24) {
+            top: 53px;
+            left: 139px;
+            height: 3px;
+            width: 3px;
+            opacity: 0.01;
+            animation-delay: 0.28s;
+        }
+
+        .particle:nth-child(25) {
+            top: 114px;
+            left: 113px;
+            height: 3px;
+            width: 4px;
+            opacity: 0.82;
+            animation-delay: 0.48s;
+        }
+
+        .particle:nth-child(26) {
+            top: 34px;
+            left: 285px;
+            height: 3px;
+            width: 2px;
+            opacity: 0.99;
+            animation-delay: 0.85s;
+        }
+
+        .particle:nth-child(27) {
+            top: 150px;
+            left: 192px;
+            height: 3px;
+            width: 4px;
+            opacity: 0.09;
+            animation-delay: 0.52s;
+        }
+
+        .particle:nth-child(28) {
+            top: 123px;
+            left: 239px;
+            height: 2px;
+            width: 3px;
+            opacity: 0.67;
+            animation-delay: 0.4s;
+        }
+
+        .particle:nth-child(29) {
+            top: 55px;
+            left: 213px;
+            height: 3px;
+            width: 2px;
+            opacity: 0.82;
+            animation-delay: 0.82s;
+        }
+
+        .particle:nth-child(30) {
+            top: 25px;
+            left: 128px;
+            height: 3px;
+            width: 3px;
+            opacity: 0.95;
+            animation-delay: 0.25s;
+        }
+
+        .particle:nth-child(31) {
+            top: 67px;
+            left: 119px;
+            height: 4px;
+            width: 3px;
+            opacity: 0.32;
+            animation-delay: 0.37s;
+        }
+
+        .particle:nth-child(32) {
+            top: 61px;
+            left: 143px;
+            height: 4px;
+            width: 2px;
+            opacity: 0.5;
+            animation-delay: 0.85s;
+        }
+
+        .particle:nth-child(33) {
+            top: 128px;
+            left: 93px;
+            height: 2px;
+            width: 3px;
+            opacity: 0.3;
+            animation-delay: 0.58s;
+        }
+
+        .particle:nth-child(34) {
+            top: 140px;
+            left: 172px;
+            height: 3px;
+            width: 4px;
+            opacity: 0.8;
+            animation-delay: 0.94s;
+        }
+
+        .particle:nth-child(35) {
+            top: 136px;
+            left: 215px;
+            height: 3px;
+            width: 3px;
+            opacity: 0.7;
+            animation-delay: 0.74s;
+        }
+
+        .particle:nth-child(36) {
+            top: 52px;
+            left: 156px;
+            height: 2px;
+            width: 2px;
+            opacity: 0.56;
+            animation-delay: 0.71s;
+        }
+
+        .particle:nth-child(37) {
+            top: 95px;
+            left: 188px;
+            height: 2px;
+            width: 3px;
+            opacity: 0.58;
+            animation-delay: 0.38s;
+        }
+
+        .particle:nth-child(38) {
+            top: 88px;
+            left: 223px;
+            height: 4px;
+            width: 2px;
+            opacity: 0.29;
+            animation-delay: 0.38s;
+        }
+
+        .particle:nth-child(39) {
+            top: 111px;
+            left: 141px;
+            height: 4px;
+            width: 3px;
+            opacity: 0.47;
+            animation-delay: 0.89s;
+        }
+
+        .particle:nth-child(40) {
+            top: 142px;
+            left: 295px;
+            height: 4px;
+            width: 3px;
+            opacity: 0.22;
+            animation-delay: 0.53s;
+        }
+
+        .anim-1 {
+            animation: .6s   flash-Frames    infinite ease      both;
+        }
+
+        .anim-2 {
+            animation: .5s   flash2-Frames   infinite ease      both;
+        }
+
+        .anim-3 {
+            animation: .6s   flash3-Frames   infinite ease      both;
+        }
+
+        @keyframes flash-Frames {
+            0% {
+                opacity: 0;
+                transform: translate(0, 1000%) scaleX(0.2);
+            }
+            30% {
+                opacity: 1;
+            }
+            50% {
+                transform: translate(304%, -800%) scaleX(1);
+            }
+            65% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+                transform: translate(600%, 800%) scaleX(0.2);
+            }
+        }
+        @keyframes flash2-Frames {
+            0% {
+                opacity: 0;
+                transform: translate(0, 1100%) scaleX(0.2);
+            }
+            10% {
+                opacity: 1;
+            }
+            50% {
+                transform: translate(-400%, -800%) scaleX(1);
+            }
+            60% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+                transform: translate(-500%, 900%) scaleX(0.2);
+            }
+        }
+        @keyframes flash3-Frames {
+            0% {
+                opacity: 0;
+                transform: translate(0, 1000%) scaleX(0.2);
+            }
+            10% {
+                opacity: 1;
+            }
+            50% {
+                transform: translate(-100%, -800%) scaleX(1);
+            }
+            60% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+                transform: translate(-200%, 900%) scaleX(0.2);
+            }
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <div class="wrap-glass">
+        <img class="glass" src="http://res.cloudinary.com/doriana/image/upload/v1507763063/glass_jzh8ej_adb2c1.png"/>
+        <div class="particle anim-1"></div>
+        <div class="particle anim-2"></div>
+        <div class="particle anim-1"></div>
+        <div class="particle anim-2"></div>
+        <div class="particle anim-1"></div>
+        <div class="particle anim-3"></div>
+        <div class="particle anim-1"></div>
+        <div class="particle anim-2"></div>
+        <div class="particle anim-3"></div>
+        <div class="particle anim-2"></div>
+        <div class="particle anim-1"></div>
+        <div class="particle anim-2"></div>
+        <div class="particle anim-1"></div>
+        <div class="particle anim-2"></div>
+        <div class="particle anim-1"></div>
+        <div class="particle anim-1"></div>
+        <div class="particle anim-3"></div>
+        <div class="particle anim-1"></div>
+        <div class="particle anim-2"></div>
+        <div class="particle anim-1"></div>
+        <div class="particle anim-1"></div>
+        <div class="particle anim-3"></div>
+        <div class="particle anim-1"></div>
+        <div class="particle anim-2"></div>
+        <div class="particle anim-3"></div>
+        <div class="particle anim-2"></div>
+        <div class="particle anim-1"></div>
+        <div class="particle anim-2"></div>
+        <div class="particle anim-1"></div>
+        <div class="particle anim-2"></div>
+        <div class="particle anim-1"></div>
+        <div class="particle anim-2"></div>
+        <div class="particle anim-1"></div>
+        <div class="particle anim-2"></div>
+        <div class="particle anim-3"></div>
+        <div class="particle anim-1"></div>
+        <div class="particle anim-2"></div>
+        <div class="particle anim-1"></div>
+        <div class="particle anim-2"></div>
+        <div class="particle anim-3"></div>
+    </div>
+</div>
+
+</body>
+</html>
